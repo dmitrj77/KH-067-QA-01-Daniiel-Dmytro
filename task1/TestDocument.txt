@@ -1,0 +1,16 @@
+private static string StringNotEmpty()
+        {
+            string Name = Console.ReadLine();
+            bool validation = false;
+            do
+            {
+                if (string.IsNullOrWhiteSpace(Name))
+                {
+                    Console.WriteLine($"String cannot be Empty. Please string! ");
+                    Name = Console.ReadLine();
+                }
+                else break;
+            }
+            while (!validation);
+            return Name;
+        }
