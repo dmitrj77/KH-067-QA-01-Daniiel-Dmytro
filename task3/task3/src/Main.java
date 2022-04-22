@@ -10,7 +10,7 @@ public class Main {
             String operator;
             double result;
             System.out.println("Please input first number");
-            double first = CorrectNumb();
+            double first = getCorrectNumb();
 
             System.out.println("Please input operation");
             operator = sc.next();
@@ -22,51 +22,43 @@ public class Main {
 
             if (operator.equals(plus)) {
                 System.out.println("Please input second number");
-                double second = CorrectNumb();
+                double second = getCorrectNumb();
                 result = first + second;
                 System.out.println(first + operator + second + "=" + result);
-            } else {
-                if (operator.equals(mines)) {
-                    System.out.println("Please input second number");
-                    double second = CorrectNumb();
-                    result = first - second;
+            } else if (operator.equals(mines)) {
+                System.out.println("Please input second number");
+                double second = getCorrectNumb();
+                result = first - second;
+                System.out.println(first + operator + second + "=" + result);
+            } else if (operator.equals(multiply)) {
+                System.out.println("Please input second number");
+                double second = getCorrectNumb();
+                result = first * second;
+                System.out.println(first + operator + second + "=" + result);
+            } else if (operator.equals(divide)) {
+                System.out.println("Please input second number");
+                double second = getCorrectNumb();
+                if (second != 0) {
+                    result = first / second;
                     System.out.println(first + operator + second + "=" + result);
                 } else {
-                    if (operator.equals(multiply)) {
-                        System.out.println("Please input second number");
-                        double second = CorrectNumb();
-                        result = first * second;
-                        System.out.println(first + operator + second + "=" + result);
-                    } else {
-                        if (operator.equals(divide)) {
-                            System.out.println("Please input second number");
-                            double second = CorrectNumb();
-                            if (second != 0) {
-                                result = first / second;
-                                System.out.println(first + operator + second + "=" + result);
-                            } else {
-                                System.out.println("Error: divide by 0 is not allowed!");
-                            }
-                        } else {
-                            if (operator.equals(percent)) {
-                                System.out.println("Please input second number");
-                                double second = CorrectNumb();
-                                result = first % second;
-                                System.out.println(first + operator + second + "=" + result);
-                            } else {
-                                System.out.println("Please input correct operator");
-                            }
-                        }
-                    }
+                    System.out.println("Error: divide by 0 is not allowed!");
                 }
+            } else if (operator.equals(percent)) {
+                System.out.println("Please input second number");
+                double second = getCorrectNumb();
+                result = first % second;
+                System.out.println(first + operator + second + "=" + result);
+            } else {
+                System.out.println("Please input correct operator");
             }
             System.out.println("Enter " + " exit:" + " to close!");
             sc.nextLine();
-            command = sc.nextLine();
-            command = command.toLowerCase();
+            command = sc.nextLine().toLowerCase();
         }
     }
-    public static double CorrectNumb() {
+
+    public static double getCorrectNumb() {
         Scanner sc = new Scanner(System.in);
         double first = 0;
         boolean validation;
