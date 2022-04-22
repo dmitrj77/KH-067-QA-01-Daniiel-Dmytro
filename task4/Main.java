@@ -9,7 +9,7 @@ public class Main {
 
 
             System.out.println("Please input 3 words");
-            String text = StringNotEmpty();
+            String text = getStringNotEmpty();
             String[] words = text.split(",");
 
             System.out.println("Please choice what you want ");
@@ -22,7 +22,7 @@ public class Main {
             switch (line) {
                 case "1": {
                     System.out.println("Please enter [length] of word");
-                    int i = CorrectNumb();
+                    int i = getCorrectNumb();
                     for (String word : words) {
                         if (word.length() <= i) {
                             System.out.printf("Word [length] <= " + i + ": " + word + "\n");
@@ -88,7 +88,7 @@ public class Main {
 
     }
 
-    public static int CorrectNumb() {
+    public static int getCorrectNumb() {
         Scanner sc = new Scanner(System.in);
         int first = 0;
         boolean validation;
@@ -105,7 +105,7 @@ public class Main {
         return first;
     }
 
-    private static String StringNotEmpty() {
+    private static String getStringNotEmpty() {
         Scanner sc = new Scanner(System.in);
         String name = sc.nextLine();
         boolean validation;
