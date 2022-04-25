@@ -6,60 +6,55 @@ public class UniversityGroup {
     private static int endYear;
     public static String[] studentArray = new String[]{};
 
-    public String getgroupName() {
+    public static String getGroupName() {
 
         return groupName;
     }
 
-    public int getStarYear() {
+    public static int getStarYear() {
         return starYear;
     }
 
-    public int getEndYear() {
+    public static int getEndYear() {
         return endYear;
     }
 
-    public static String getStudentArray() {
+    public void getStudentArray() {
         for (int i = 0; i < studentArray.length; i++) {
             studentArray[i] = studentArray[i];
             System.out.printf("Student: " + studentArray[i] + "\n");
         }
-        return String.valueOf(studentArray);
     }
 
-    public UniversityGroup(String groupName, int starYear) {
-        this.starYear = starYear;
-        this.endYear = starYear + 5;
-        this.groupName = groupName;
-
-    }
-
-    public UniversityGroup(String groupName, int starYear, String[] studentArray) {
-        this.starYear = starYear;
-        this.endYear = starYear + 5;
-        this.groupName = groupName;
-        this.studentArray = studentArray;
+    public UniversityGroup(String groupN, int starY) {
+       starYear = starY;
+        endYear = starYear + 5;
+       groupName = groupN;
 
     }
 
-    public static void addStudent(String[] students) {
+    public UniversityGroup(String groupN, int starY, String[] Array) {
+        starYear = starY;
+        endYear = starYear + 5;
+       groupName = groupN;
+       studentArray = Array;
 
-        if (studentArray.length >= students.length) {
-            for (int i = 0; i < students.length; i++) {
-                if (studentArray[i] == (null)) {
-                    studentArray[i] = students[i];
-                }
-            }
-        } else {
-            for (int i = 0; i < studentArray.length; i++) {
-                if (studentArray[i] == (null)) {
-                    studentArray[i] = students[i];
-                }
+    }
+
+    public  void addStudent(String[] students) {
+        int index = 0;
+        for (int i = 0; i < studentArray.length; i++) {
+            if (studentArray[i] == (null) && index < students.length) {
+                studentArray[i] = students[index];
+                index++;
             }
         }
     }
 
-    public static void getGroupDescription(String[] studentArray) {
+    public void getGroupDescription(String[] studentArray) {
+        groupName = getGroupName();
+        starYear = getStarYear();
+        endYear = getEndYear();
         for (int i = 0; i < studentArray.length; i++) {
             studentArray[i] = studentArray[i];
             System.out.printf("Student: " + studentArray[i] + " Group: " + groupName + " StartYear: " + starYear + " endYear: "
@@ -68,18 +63,14 @@ public class UniversityGroup {
     }
 
     public static void main(String[] args) {
-        String[] studentArray = new String[6];
-        String[] students = new String[5];
-        UniversityGroup obj1 = new UniversityGroup("123", 1992);
+        studentArray = new String[9];
+        String[] students = new String[]{"Petya Petrov", "Misha Misha", "Ivan Ivanov", "Kolya Nikol"};
+        UniversityGroup obj1 = new UniversityGroup("123", 2019);
         obj1.addStudent(students);
-        getGroupDescription(studentArray);
-        UniversityGroup obj2 = new UniversityGroup("124", 1992, studentArray);
-        students = new String[]{"Petya", "Misha", "Vasya", "Grisha"};
+        obj1.getGroupDescription(studentArray);
+        UniversityGroup obj2 = new UniversityGroup("124", 2020, studentArray);
         obj2.addStudent(students);
-        getGroupDescription(studentArray);
-        students = new String[]{"1", "2", "3", "4", "5"};
-        obj2.addStudent(students);
-        getGroupDescription(studentArray);
-        UniversityGroup.getStudentArray();
+        obj2.getGroupDescription(studentArray);
+        obj2.getStudentArray();
     }
 }
