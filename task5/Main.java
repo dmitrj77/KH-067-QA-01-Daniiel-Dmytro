@@ -71,10 +71,6 @@ public class Main {
             obj2.getGroupDescription(studentArray);
             obj2.getStudentArray();
         }
-
-
     }
-
-
 }
 
