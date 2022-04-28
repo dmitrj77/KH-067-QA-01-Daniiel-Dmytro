@@ -4,9 +4,6 @@ public class Main {
         Saab saab = new Saab("white", "Scania", 2019);
         saab.addCars(car);
         saab.getModelDescription();
-        BMW bmw = new BMW("red", "X5", 2021);
-        bmw.addCars(car);
-        bmw.getModelDescription();
         Man man = new Man("black", "M123", "BI2387AI", 2018);
         man.addCars(car);
         man.getModelDescription();
@@ -15,7 +12,6 @@ public class Main {
         man.setNumber("BC8767MX");
         man.setBody(10.5F);
         man.setPurchaseData(2025);
-        man.getPurchaseData();
         man.getModelDescription();
     }
 }
