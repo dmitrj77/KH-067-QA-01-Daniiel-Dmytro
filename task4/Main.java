@@ -1,5 +1,3 @@
-import javax.xml.bind.Element;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -9,20 +7,9 @@ public class Main {
         String text = StringNotEmpty();
         String[] words = text.split(",");
         String command = "";
-<<<<<<< HEAD
         while (!command.equals("0")) {
-            System.out.printf("");
-            System.out.println("\nPlease choice what you want ");
-=======
-        while (!command.equals(comm)) {
 
-
-            System.out.println("Please input 3 words");
-            String text = getStringNotEmpty();
-            String[] words = text.split(",");
-
-            System.out.println("Please choice what you want ");
->>>>>>> 581b71c445e7d2fcbb9691c2d8ff37393b85d2c0
+            System.out.println("\nPlease choice a operation");
             System.out.println("Found maximum length: [1]");
             System.out.println("Found start char:     [2]");
             System.out.println("Found end char:       [3]");
@@ -32,7 +19,6 @@ public class Main {
             switch (line) {
                 case "1": {
                     System.out.println("Please enter [length] of word");
-<<<<<<< HEAD
                     int i = CorrectNumb();
                     int index = 0;
                     String[] temps = new String[10];
@@ -43,14 +29,6 @@ public class Main {
                                 temps[index] = word;
                                 index++;
                             }
-=======
-                    int i = getCorrectNumb();
-                    for (String word : words) {
-                        if (word.length() <= i) {
-                            System.out.printf("Word [length] <= " + i + ": " + word + "\n");
-                        } else {
-                            System.out.printf("Word [length] <= " + i + ": not found \n");
->>>>>>> 581b71c445e7d2fcbb9691c2d8ff37393b85d2c0
                         }
                     }
                     getFind(temps, i);
@@ -125,7 +103,7 @@ public class Main {
 
     }
 
-    public static int getCorrectNumb() {
+    public static int CorrectNumb() {
         Scanner sc = new Scanner(System.in);
         int first = 0;
         boolean validation;
@@ -142,7 +120,7 @@ public class Main {
         return first;
     }
 
-    private static String getStringNotEmpty() {
+    private static String StringNotEmpty() {
         Scanner sc = new Scanner(System.in);
         String name = sc.nextLine();
         boolean validation;
