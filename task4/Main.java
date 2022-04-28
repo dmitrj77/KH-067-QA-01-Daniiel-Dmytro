@@ -1,3 +1,5 @@
+import javax.xml.bind.Element;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -8,7 +10,7 @@ public class Main {
         while (!command.equals(comm)) {
 
 
-            System.out.println("Please input 3 words");
+            System.out.println("\n Please enter a few words");
             String text = StringNotEmpty();
             String[] words = text.split(",");
 
@@ -23,54 +25,72 @@ public class Main {
                 case "1": {
                     System.out.println("Please enter [length] of word");
                     int i = CorrectNumb();
-                    for (String word : words) {
-                        if (word.length() <= i) {
-                            System.out.printf("Word [length] <= " + i + ": " + word + "\n");
-                        } else {
-                            System.out.printf("Word [length] <= " + i + ": not found \n");
+                    int index = 0;
+                    String[] temps = new String[10];
+                    for (int ind = 0; ind < words.length; ) {
+                        for (String word : words) {
+                            ind++;
+                            if (word.length() <= i) {
+                                temps[index] = word;
+                                index++;
+                            }
                         }
                     }
+                    getFind(temps, i);
                 }
                 break;
 
                 case "2": {
                     System.out.println("Please enter [start] chars");
                     String star = sc.nextLine();
-
-                    for (String word : words) {
-                        if (word.startsWith(star)) {
-                            System.out.printf("Word [start] on char: " + star + " is " + word + "\n");
-                        } else {
-                            System.out.printf("Word [start] on: " + star + " is not found \n");
+                    int index = 0;
+                    String[] temps = new String[10];
+                    for (int ind = 0; ind < words.length; ) {
+                        for (String word : words) {
+                            ind++;
+                            if (word.startsWith(star)) {
+                                temps[index] = word;
+                                index++;
+                            }
                         }
                     }
+                    getFind(temps, star);
                 }
                 break;
 
                 case "3": {
                     System.out.println("Please enter [end] chars");
                     String star = sc.nextLine();
-
-                    for (String word : words) {
-                        if (word.endsWith(star)) {
-                            System.out.printf("Word [ends] on char: " + star + " is " + word + "\n");
-                        } else {
-                            System.out.printf("Word [ends] on: " + star + " is not found\n");
+                    int index = 0;
+                    String[] temps = new String[10];
+                    for (int ind = 0; ind < words.length; ) {
+                        for (String word : words) {
+                            ind++;
+                            if (word.endsWith(star)) {
+                                temps[index] = word;
+                                index++;
+                            }
                         }
                     }
+                    getFind(temps, star);
                 }
                 break;
 
                 case "4": {
                     System.out.println("Please enter [contains] chars");
                     String star = sc.nextLine();
-                    for (String word : words) {
-                        if (word.contains(star)) {
-                            System.out.printf("Word [contains] char: " + star + " is " + word + "\n");
-                        } else {
-                            System.out.printf("Word [contains] char: " + star + " is not found\n");
+                    int index = 0;
+                    String[] temps = new String[10];
+                    for (int ind = 0; ind < words.length; ) {
+                        for (String word : words) {
+                            ind++;
+                            if (word.contains(star)) {
+                                temps[index] = word;
+                                index++;
+                            }
                         }
                     }
+                    getFind(temps, star);
                 }
                 break;
 
@@ -80,7 +100,7 @@ public class Main {
                 break;
 
                 default: {
-                    System.out.println("Please do choice\n");
+                    System.out.println("Please make a choice\n");
                 }
 
             }
@@ -121,5 +141,28 @@ public class Main {
         }
         while (validation);
         return name;
+    }
+
+    private static void getFind(String[] temps, int i) {
+        if (temps[0]!= null) {
+            for (String temp : temps) {
+                if (temp != null) {
+                    System.out.printf("\n Word [length] <= [" + i + "]: " + temp);
+                }
+            }
+        } else {
+            System.out.printf("\n Word [length] <= [" + i + "] is not found");
+        }
+    }
+    private static void getFind(String[] temps,String star) {
+        if (temps[0]!= null) {
+            for (String temp : temps) {
+                if (temp != null) {
+                    System.out.printf("\n Found the word with [" + star + "]: " + temp);
+                }
+            }
+        } else {
+            System.out.printf("\n Word with [" + star + "] is not found");
+        }
     }
 }
