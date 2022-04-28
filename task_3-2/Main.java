@@ -11,7 +11,7 @@ public class Main {
             double result;
             System.out.println("-----Calculator----");
             System.out.println(" Input first number");
-            double first = CorrectNumb();
+            double first = getCorrectNumb();
 
             System.out.println("--Input operation--");
             System.out.println("For addition:     +");
@@ -24,28 +24,28 @@ public class Main {
             switch (operator){
                 case "+": {
                     System.out.println(" Input first number");
-                    double second = CorrectNumb();
+                    double second = getCorrectNumb();
                     result = first + second;
                     System.out.println(first + operator + second + "=" + result);
                     break;
                 }
                 case "-":{
                     System.out.println("Input second number");
-                    double second = CorrectNumb();
+                    double second = getCorrectNumb();
                     result = first - second;
                     System.out.println(first + operator + second + "=" + result);
                     break;
                 }
                 case "*":{
                     System.out.println("Input second number");
-                    double second = CorrectNumb();
+                    double second = getCorrectNumb();
                     result = first * second;
                     System.out.println(first + operator + second + "=" + result);
                     break;
                 }
                 case "/":{
                     System.out.println("Input second number");
-                    double second = CorrectNumb();
+                    double second = getCorrectNumb();
                     if (second != 0) {
                         result = first / second;
                         System.out.println(first + operator + second + "=" + result);
@@ -57,7 +57,7 @@ public class Main {
                 }
                 case "%":{
                     System.out.println("Input second number");
-                    double second = CorrectNumb();
+                    double second = getCorrectNumb();
                     result = first % second;
                     System.out.println(first + operator + second + "=" + result);
                     break;
@@ -73,7 +73,7 @@ public class Main {
         }
     }
 
-    public static double CorrectNumb() {
+    public static double getCorrectNumb() {
         Scanner sc = new Scanner(System.in);
         double first = 0;
         boolean validation;
