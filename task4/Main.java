@@ -5,16 +5,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String comm = "exit";
+        System.out.println("\nPlease enter a few words a [,]");
+        String text = StringNotEmpty();
+        String[] words = text.split(",");
         String command = "";
-        while (!command.equals(comm)) {
-
-
-            System.out.println("\n Please enter a few words");
-            String text = StringNotEmpty();
-            String[] words = text.split(",");
-
-            System.out.println("Please choice what you want ");
+        while (!command.equals("0")) {
+            System.out.printf("");
+            System.out.println("\nPlease choice what you want ");
             System.out.println("Found maximum length: [1]");
             System.out.println("Found start char:     [2]");
             System.out.println("Found end char:       [3]");
@@ -95,7 +92,7 @@ public class Main {
                 break;
 
                 case "0": {
-                    command = "exit";
+                    command = "0";
                 }
                 break;
 
@@ -147,22 +144,22 @@ public class Main {
         if (temps[0]!= null) {
             for (String temp : temps) {
                 if (temp != null) {
-                    System.out.printf("\n Word [length] <= [" + i + "]: " + temp);
+                    System.out.printf("\nWord [length] <= [" + i + "]: " + temp);
                 }
             }
         } else {
-            System.out.printf("\n Word [length] <= [" + i + "] is not found");
+            System.out.printf("\nWord [length] <= [" + i + "] is not found");
         }
     }
     private static void getFind(String[] temps,String star) {
         if (temps[0]!= null) {
             for (String temp : temps) {
                 if (temp != null) {
-                    System.out.printf("\n Found the word with [" + star + "]: " + temp);
+                    System.out.printf("\nFound the word with [" + star + "]: " + temp);
                 }
             }
         } else {
-            System.out.printf("\n Word with [" + star + "] is not found");
+            System.out.printf("\nWord with [" + star + "] is not found");
         }
     }
 }
