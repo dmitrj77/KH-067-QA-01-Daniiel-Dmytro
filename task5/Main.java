@@ -73,7 +73,5 @@ public class Main {
         }
     }
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 5f81e993d53c67e545dc8437d4634f8e1f920eca
+
