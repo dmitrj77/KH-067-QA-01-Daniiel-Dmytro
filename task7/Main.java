@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class Main {
     public static void main(String[] args) {
         String[] car = new String[]{"Scania", "BMW", "Man"};
@@ -13,5 +15,7 @@ public class Main {
         man.setBody(10.5F);
         man.setPurchaseData(2025);
         man.getModelDescription();
+
+
     }
 }

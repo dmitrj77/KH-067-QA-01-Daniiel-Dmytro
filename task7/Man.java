@@ -1,3 +1,5 @@
+import javax.swing.text.DefaultEditorKit;
+
 public class Man extends Truck {
     private float body = 10.5F;
 
@@ -12,7 +14,28 @@ public class Man extends Truck {
     @Override
     public void getModelDescription() {
         System.out.printf("\n-----Man-----");
-        super.getModelDescription();
+        getModelDescription();
         System.out.printf("\n Body : " + body+" m3");
+    }
+
+    @Override
+    public void setMove() {
+
+    }
+
+    @Override
+    public void setBrake() {
+
+    }
+
+    @Override
+    public void getVoice() {
+
+
+    }
+
+    @Override
+    public void getEnythin() {
+
     }
 }

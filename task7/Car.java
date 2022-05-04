@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public abstract class Car {
+public abstract class Car implements Move, Voice {
     private String color;
     private String model;
     private String number;
@@ -8,6 +8,7 @@ public abstract class Car {
     private int seat;
     private float body;
     public static String[] cars = new String[8];
+
     public String getModel() {
         return model;
     }
@@ -80,28 +81,26 @@ public abstract class Car {
 
     public void setCars(String[] car) {
 
-        int index = 0;
-        for (int i = 0; i < cars.length; i++) {
-            if (cars[i] == (null) && index < car.length) {
-                cars[i] = car[index];
-                index++;
-            } else break;
+        // for (int i = 0; i < cars.length; i++) {
+        if (cars[0] == (null)) {
+            cars[0] = car[0];
+            // } else break;
+            // }
         }
-    }
 
-    public void getCar() {
-        for (int i = 0; i < cars.length; i++) {
-            cars[i] = cars[i];
-            System.out.printf("\nCar: " + cars[i]);
-        }
-    }
+        // public void getCar() {
+        //  for (int i = 0; i < cars.length; i++) {
+        //     cars[i] = cars[i];
+        //System.out.printf("\nCar: " + cars[i]);
+        //}
+        // }
 
-    public void getModelDescription() {
-        String model = getModel();
-        int purchaseData = getPurchaseData();
-        String color = getColor();
-        String number = getNumber();
-        System.out.printf("\n Model: " + model + "\n Color: " + color +
-                "\n Number: " + number + "\n PurchaseData:" + purchaseData);
+       // public void getModelDescription() {
+        //   String model = getModel();
+        ///  int purchaseData = getPurchaseData();String color = getColor();
+         ///String number = getNumber();
+         // System.out.printf("\n Model: " + model + "\n Color: " + color +
+         //        "\n Number: " + number + "\n PurchaseData:" + purchaseData);
+       // }
     }
 }

@@ -10,10 +10,11 @@ public abstract class Truck extends Car {
     }
 
     public void setCars(String[] car) {
-        super.setCars(car);
+        setCars(car);
     }
 
     public void getModelDescription() {
-        super.getModelDescription();
+
+        getModelDescription();
     }
 }

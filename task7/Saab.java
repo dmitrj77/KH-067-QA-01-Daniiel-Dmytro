@@ -11,7 +11,27 @@ public class Saab extends Bus {
     @Override
     public void getModelDescription() {
         System.out.printf("--Saab-Scania--");
-        super.getModelDescription();
+        getModelDescription();
         System.out.printf("\n Seat : " + seat+" ps");
+    }
+
+    @Override
+    public void setMove() {
+
+    }
+
+    @Override
+    public void setBrake() {
+
+    }
+
+    @Override
+    public void getVoice() {
+
+    }
+
+    @Override
+    public void getEnythin() {
+
     }
 }

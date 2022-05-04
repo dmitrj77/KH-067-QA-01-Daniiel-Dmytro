@@ -1,7 +1,13 @@
 public interface Move {
-    String speed();
-    abstract void setMove();
-    abstract void setBrake();
-    default void
+    int MAXIMUM_SPEED = 90;
+
+    void setMove();
+
+    void setBrake();
+
+    default void defaultMethod() {
+
+    }
+
 
 }
