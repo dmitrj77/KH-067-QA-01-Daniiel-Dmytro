@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("\nPlease enter a few words a [,]");
-        String text = StringNotEmpty();
+        String text = getStringNotEmpty();
         String[] words = text.split(",");
         String command = "";
         while (!command.equals("0")) {
@@ -19,7 +19,7 @@ public class Main {
             switch (line) {
                 case "1": {
                     System.out.println("Please enter [length] of word");
-                    int i = CorrectNumb();
+                    int i = getCorrectNumb();
                     int index = 0;
                     String[] temps = new String[10];
                     for (int ind = 0; ind < words.length; ) {
@@ -103,7 +103,7 @@ public class Main {
 
     }
 
-    public static int CorrectNumb() {
+    public static int getCorrectNumb() {
         Scanner sc = new Scanner(System.in);
         int first = 0;
         boolean validation;
@@ -120,7 +120,7 @@ public class Main {
         return first;
     }
 
-    private static String StringNotEmpty() {
+    private static String getStringNotEmpty() {
         Scanner sc = new Scanner(System.in);
         String name = sc.nextLine();
         boolean validation;
@@ -139,7 +139,7 @@ public class Main {
     }
 
     private static void getFind(String[] temps, int i) {
-        if (temps[0]!= null) {
+        if (temps[0] != null) {
             for (String temp : temps) {
                 if (temp != null) {
                     System.out.printf("\nWord [length] <= [" + i + "]: " + temp);
@@ -149,8 +149,9 @@ public class Main {
             System.out.printf("\nWord [length] <= [" + i + "] is not found");
         }
     }
-    private static void getFind(String[] temps,String star) {
-        if (temps[0]!= null) {
+
+    private static void getFind(String[] temps, String star) {
+        if (temps[0] != null) {
             for (String temp : temps) {
                 if (temp != null) {
                     System.out.printf("\nFound the word with [" + star + "]: " + temp);
