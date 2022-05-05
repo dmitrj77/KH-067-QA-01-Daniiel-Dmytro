@@ -3,7 +3,7 @@ public class Main {
         private String groupName;
         private int starYear;
         private int endYear;
-        public static String[] studentArray = new String[]{"Misha", "Kolya"};
+        public static String[] studentArray = new String[]{};
 
         public String getGroupName() {
 
@@ -20,33 +20,32 @@ public class Main {
 
         public void getStudentArray() {
             for (int i = 0; i < studentArray.length; i++) {
-                studentArray[i] = studentArray[i];
-                System.out.printf("Student: " + studentArray[i] + "\n");
+                System.out.printf("\nStudent: " + studentArray[i]);
             }
         }
 
-        public UniversityGroup(String groupN, int starY) {
-            starYear = starY;
-            endYear = starYear + 5;
-            groupName = groupN;
+        public UniversityGroup(String groupName, int starYear) {
+            this.starYear = starYear;
+            this.endYear = starYear + 5;
+            this.groupName = groupName;
 
         }
 
-        public UniversityGroup(String groupN, int starY, String[] Array) {
-            starYear = starY;
-            endYear = starYear + 5;
-            groupName = groupN;
-            studentArray = Array;
+        public UniversityGroup(String groupName, int starYear, String[] studentArray) {
+            this.starYear = starYear;
+            this.endYear = starYear + 5;
+            this.groupName = groupName;
+            this.studentArray = studentArray;
 
         }
 
-        public void setaddStudent(String[] studentArray) {
-
-            if (this.studentArray[0] == (null)) {
-                this.studentArray[0] = studentArray[0];
+        public void setAddStudent(String[] studentArray) {
+            if (this.studentArray.length == 0) {
+                this.studentArray = studentArray;
             } else {
-                System.out.printf("Array is not empty");
+                System.out.printf("\nArray is not empty");
             }
+
         }
 
         public void getGroupDescription(String[] studentArray) {
@@ -56,20 +55,22 @@ public class Main {
             for (int i = 0; i < studentArray.length; i++) {
                 studentArray[i] = studentArray[i];
                 System.out.printf("\nStudent: " + studentArray[i] + " Group: " + groupName +
-                        " StartYear: " + starYear + " endYear: " + endYear + "\n");
+                        " StartYear: " + starYear + " endYear: " + endYear);
             }
         }
 
         public static void main(String[] args) {
-            //String[] studentArray = new String[4];
-            String[] students = new String[]{"Petya Petrov"};
+            String[] students = new String[]{"Petya Petrov", "Ivan Ivanov"};
             UniversityGroup obj1 = new UniversityGroup("123", 2019);
-            obj1.setaddStudent(students);
             obj1.getGroupDescription(studentArray);
-            UniversityGroup obj2 = new UniversityGroup("124", 2020, studentArray);
-            obj2.setaddStudent(students);
-            obj2.getGroupDescription(studentArray);
-            obj2.getStudentArray();
+            obj1.setAddStudent(students);
+            obj1.getGroupDescription(studentArray);
+            obj1.getStudentArray();
+
+            UniversityGroup obj = new UniversityGroup("124", 2020, students);
+            obj.setAddStudent(students);
+            obj.getGroupDescription(studentArray);
+            obj.setAddStudent(students);
         }
     }
 }
