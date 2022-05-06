@@ -1,3 +1,5 @@
+package Garage;
+
 public interface Move {
     int MAXIMUM_SPEED = 90;
 
@@ -5,9 +7,7 @@ public interface Move {
 
     void setBrake();
 
-    default void defaultMethod() {
+    default void getEnythin() {
 
     }
-
-
 }

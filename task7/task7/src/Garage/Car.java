@@ -1,19 +1,22 @@
+package Garage;
+
 import java.time.LocalDate;
 
-public abstract class Car implements Move, Voice {
+public abstract class Car implements Voice,Move {
     private String color;
     private String model;
     private String number;
     private int purchaseData;
     private int seat;
     private float body;
-    public static String[] cars = new String[8];
+    private String[] cars = new String[]{};
 
     public String getModel() {
         return model;
     }
 
     public String getColor() {
+
         return color;
     }
 
@@ -39,12 +42,10 @@ public abstract class Car implements Move, Voice {
 
     public void setModel(String model) {
         this.model = model;
-
     }
 
     public void setNumber(String number) {
         this.number = number;
-
     }
 
     public void setSeat(int seat) {
@@ -61,46 +62,36 @@ public abstract class Car implements Move, Voice {
 
     public void setPurchaseData(int purchaseData) {
         int date = LocalDate.now().getYear();
-        if (purchaseData < date) {
-            this.purchaseData = purchaseData;
-        } else System.out.printf("\nPurchaseData cannot to be more that now.You set: " + purchaseData);
+        if (purchaseData > date) {
+            throw new RuntimeException("\nPurchaseData cannot to be more that now.You set: " + purchaseData);
+        }
+        this.purchaseData = purchaseData;
     }
 
-    public Car(String color, String model, int purchaseData) {
-        setColor(color);
-        setModel(model);
-        setPurchaseData(purchaseData);
-    }
-
-    public Car(String color, String model, String number, int purchaseData) {
-        setColor(color);
-        setModel(model);
-        setNumber(number);
-        setPurchaseData(purchaseData);
-    }
 
     public void setCars(String[] car) {
-
-        // for (int i = 0; i < cars.length; i++) {
-        if (cars[0] == (null)) {
-            cars[0] = car[0];
-            // } else break;
-            // }
+        if (cars.length == 0) {
+            cars = car;
+        } else {
+            System.out.printf("Array not empty");
         }
 
         // public void getCar() {
-        //  for (int i = 0; i < cars.length; i++) {
-        //     cars[i] = cars[i];
-        //System.out.printf("\nCar: " + cars[i]);
-        //}
+        // for (int i = 0; i < cars.length; i++) {
+        //cars[i] = cars[i];
+        //    System.out.printf("\nCar: " + cars[i]);
         // }
-
-       // public void getModelDescription() {
-        //   String model = getModel();
-        ///  int purchaseData = getPurchaseData();String color = getColor();
-         ///String number = getNumber();
-         // System.out.printf("\n Model: " + model + "\n Color: " + color +
-         //        "\n Number: " + number + "\n PurchaseData:" + purchaseData);
-       // }
+        // }
     }
+
+   public void getModelDescription() {
+       System.out.printf(String.format("\n$s has $s and $s purchase ",
+               getModel(), getColor(), getNumber(), getPurchaseData()));
+    }
+    public abstract void getVoice();
+    public abstract void setMove();
+
+   public abstract void setBrake();
+
 }
+
