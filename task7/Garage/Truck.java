@@ -1,5 +1,7 @@
 package Garage;
 
+import Garage.Car;
+
 public  class Truck extends Car {
 
     public Truck(String color, String model, String number, int purchaseData,float body) {

@@ -7,12 +7,14 @@ public abstract class Car {
     private int purchaseData;
     private int seat;
     private float body;
-    public static String[] cars = new String[8];
+    private String[] cars = new String[]{};
+
     public String getModel() {
         return model;
     }
 
     public String getColor() {
+
         return color;
     }
 
@@ -38,12 +40,10 @@ public abstract class Car {
 
     public void setModel(String model) {
         this.model = model;
-
     }
 
     public void setNumber(String number) {
         this.number = number;
-
     }
 
     public void setSeat(int seat) {
@@ -60,48 +60,31 @@ public abstract class Car {
 
     public void setPurchaseData(int purchaseData) {
         int date = LocalDate.now().getYear();
-        if (purchaseData < date) {
-            this.purchaseData = purchaseData;
-        } else System.out.printf("\nPurchaseData cannot to be more that now.You set: " + purchaseData);
+        if (purchaseData > date) {
+            throw new RuntimeException("\nPurchaseData cannot to be more that now.You set: " + purchaseData);
+        }
+        this.purchaseData = purchaseData;
     }
 
-    public Car(String color, String model, int purchaseData) {
-        setColor(color);
-        setModel(model);
-        setPurchaseData(purchaseData);
-    }
 
-    public Car(String color, String model, String number, int purchaseData) {
-        setColor(color);
-        setModel(model);
-        setNumber(number);
-        setPurchaseData(purchaseData);
-    }
-
-    public void addCar(String[] car) {
-
-        int index = 0;
-        for (int i = 0; i < cars.length; i++) {
-            if (cars[i] == (null) && index < car.length) {
-                cars[i] = car[index];
-                index++;
-            } else break;
+    public void setCars(String[] cars) {
+        if (this.cars.length == 0) {
+            this.cars = cars;
+        } else {
+            System.out.printf("Array not empty");
         }
     }
 
     public void getCar() {
         for (int i = 0; i < cars.length; i++) {
-            cars[i] = cars[i];
             System.out.printf("\nCar: " + cars[i]);
         }
     }
 
     public void getModelDescription() {
-        String model = getModel();
-        int purchaseData = getPurchaseData();
-        String color = getColor();
-        String number = getNumber();
-        System.out.printf("\n Model: " + model + "\n Color: " + color +
-                "\n Number: " + number + "\n PurchaseData:" + purchaseData);
+        System.out.printf("\nModel:" + getModel() + " Color:" + getColor() + " Number:" + getNumber() + " PurchaseData:"
+                +getPurchaseData());
     }
 }
+
+

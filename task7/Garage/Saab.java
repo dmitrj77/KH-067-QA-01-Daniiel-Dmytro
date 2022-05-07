@@ -1,5 +1,7 @@
 package Garage;
 
+import Garage.Bus;
+
 public class Saab extends Bus {
     public Saab(String color, String model, String number, int purchaseData, int seat) {
         super(color, model, number, purchaseData, seat);

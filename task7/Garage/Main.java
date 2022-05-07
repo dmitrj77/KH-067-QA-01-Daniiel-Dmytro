@@ -1,7 +1,5 @@
 package Garage;
 
-import java.awt.*;
-
 public class Main {
     public static void main(String[] args) {
         String[] car = new String[]{"Scania", "BMW", "Man"};

@@ -1,17 +1,15 @@
 public class Saab extends Bus {
-    private int seat = 45;
-
-    public Saab(String color, String model, int purchaseDate) {
-        super(color, model, purchaseDate);
+    public Saab(String color, String model, String number, int purchaseData, int seat) {
+        super(color, model, number, purchaseData, seat);
     }
 
-    public Saab(String color, String model, String number, int purchaseDate) {
-        super(color, model, number, purchaseDate);
+    public Saab(String color, String model, String number, int purchaseData, String[] cars) {
+        super(color, model, number, purchaseData, cars);
     }
-    @Override
-    public void getModelDescription() {
+
+     public void getModelDescription() {
         System.out.printf("--Saab-Scania--");
         super.getModelDescription();
-        System.out.printf("\n Seat : " + seat+" ps");
+        System.out.printf("\n Seat : " + getSeat()+" ps");
     }
 }
