@@ -15,6 +15,5 @@ public class Main {
         man.getBrake();
         man.getSawFly();
         man.getModelDescription();
-
     }
 }
