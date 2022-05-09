@@ -1,4 +1,4 @@
-package Garage;
+package task7.src.Garage;
 
 public class Saab extends Bus {
     public Saab(String color, String model, String number, int purchaseData, int seat) {
@@ -8,7 +8,6 @@ public class Saab extends Bus {
     public Saab(String color, String model, String number, int purchaseData, String[] cars) {
         super(color, model, number, purchaseData, cars);
     }
-    //private int seat = 45;
 
     @Override
     public void getModelDescription() {
@@ -18,19 +17,16 @@ public class Saab extends Bus {
     }
 
 
-    public void setMove() {
-
+    public void getMove() {
         System.out.printf("Saab moves in city max speed"+ MAXIMUM_SPEED );
-
     }
 
-    public void setBrake() {
-
+    public void getBrake() {
+        System.out.printf("Saab brakes");
     }
 
     @Override
     public void getVoice() {
-
         System.out.printf("Saab : Wow-wow-oo!");
     }
 

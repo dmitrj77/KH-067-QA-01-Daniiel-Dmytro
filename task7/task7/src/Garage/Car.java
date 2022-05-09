@@ -1,4 +1,4 @@
-package Garage;
+package task7.src.Garage;
 
 import java.time.LocalDate;
 
@@ -75,23 +75,16 @@ public abstract class Car implements Voice,Move {
         } else {
             System.out.printf("Array not empty");
         }
-
-        // public void getCar() {
-        // for (int i = 0; i < cars.length; i++) {
-        //cars[i] = cars[i];
-        //    System.out.printf("\nCar: " + cars[i]);
-        // }
-        // }
     }
 
    public void getModelDescription() {
-       System.out.printf(String.format("\n$s has $s and $s purchase ",
-               getModel(), getColor(), getNumber(), getPurchaseData()));
+       System.out.printf("\nModel:"+getModel()+" color:"+ getColor()+
+               " number "+ getNumber()+ " Purchase:" +getPurchaseData());
     }
     public abstract void getVoice();
-    public abstract void setMove();
+    public abstract void getMove();
 
-   public abstract void setBrake();
+   public abstract void getBrake();
 
 }
 

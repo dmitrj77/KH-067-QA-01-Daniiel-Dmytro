@@ -1,4 +1,4 @@
-package Garage;
+package task7.src.Garage;
 
 public class Man extends Truck {
     public Man(String color, String model, String number, int purchaseData, float body) {
@@ -17,13 +17,14 @@ public class Man extends Truck {
     }
 
     @Override
-    public void setMove() {
+    public void getMove() {
         System.out.printf("Man moves in city max speed"+ MAXIMUM_SPEED );
 
     }
 
     @Override
-    public void setBrake() {
+    public void getBrake() {
+        System.out.printf("Man; brakes");
 
     }
 

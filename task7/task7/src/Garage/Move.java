@@ -1,13 +1,14 @@
-package Garage;
+package task7.src.Garage;
 
 public interface Move {
     int MAXIMUM_SPEED = 90;
 
-    void setMove();
+    void getMove();
 
-    void setBrake();
+    void getBrake();
 
-    default void getEnythin() {
+    default void getSawFly() {
+        System.out.printf("\nSaw flying behind the Car");
 
     }
 }

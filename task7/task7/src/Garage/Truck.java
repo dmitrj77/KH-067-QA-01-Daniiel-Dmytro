@@ -1,4 +1,4 @@
-package Garage;
+package task7.src.Garage;
 
 public  class Truck extends Car {
 
@@ -16,15 +16,17 @@ public  class Truck extends Car {
         setPurchaseData(purchaseData);
         setCars(cars);
     }
-    public  void setMove(){
+    public  void getMove(){
+        System.out.printf("\nTruck moves");
 
     }
 
-    public void setBrake(){
+    public void getBrake(){
+        System.out.printf("\nTruck: brakes");
 
     }
 
     public  void getVoice(){
-
+        System.out.printf("\nTruck : Boo-oo-o!");
     }
 }
