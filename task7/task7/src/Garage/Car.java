@@ -77,9 +77,31 @@ public abstract class Car implements Voice,Move {
         }
     }
 
+    public Car(String color, String model, String number, int purchaseData, String[] cars) {
+        setColor(color);
+        setModel(model);
+        setNumber(number);
+        setPurchaseData(purchaseData);
+        setCars(cars);
+    }
+    public Car(String color, String model, String number, int purchaseData,float body) {
+        setColor(color);
+        setModel(model);
+        setNumber(number);
+        setPurchaseData(purchaseData);
+        setBody(body);
+    }
+    public Car(String color, String model, String number, int purchaseData,int seat) {
+        setColor(color);
+        setModel(model);
+        setNumber(number);
+        setPurchaseData(purchaseData);
+        setSeat(seat);
+    }
+
    public void getModelDescription() {
-       System.out.printf("\nModel:"+getModel()+" color:"+ getColor()+
-               " number "+ getNumber()+ " Purchase:" +getPurchaseData());
+       System.out.printf("\nModel:"+getModel()+"\ncolor:"+ getColor()+
+               "\nnumber "+ getNumber()+ "\nPurchase:" +getPurchaseData());
     }
     public abstract void getVoice();
     public abstract void getMove();

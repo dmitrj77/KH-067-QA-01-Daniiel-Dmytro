@@ -12,30 +12,24 @@ public class Man extends Truck {
     @Override
     public void getModelDescription() {
         System.out.printf("\n-----Man-----");
-        super.getModelDescription();
-        System.out.printf("\n Body : " + getBody() + " m3");
+       super.getModelDescription();
+        System.out.printf("\nBody : " + getBody() + " m3");
     }
 
     @Override
     public void getMove() {
-        System.out.printf("Man moves in city max speed"+ MAXIMUM_SPEED );
-
+        System.out.printf("\nMan moves in city max speed "+ MAXIMUM_SPEED_TRUCK);
     }
 
     @Override
     public void getBrake() {
-        System.out.printf("Man; brakes");
-
+        System.out.printf("\nMan brakes");
     }
 
     @Override
     public void getVoice() {
-        System.out.printf("Man : Booo-oo!");
+        System.out.printf("\nMan : Booo-oo!");
     }
 
-    //// @Override
-    // public void getEnythin() {
-
-    // }
 }
 
