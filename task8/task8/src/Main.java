@@ -1,15 +1,15 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
     static void sortList(List<String> arrays) {
-        List<String> chars = new ArrayList<>();
+
         String[] alphabet = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
                 "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
-        for (int a = 0; a < alphabet.length; a++) {
-            chars.add(alphabet[a]);
-        }
-        for (int r = 0; r < arrays.size() - 1; r++) {
+        List<String> chars = Arrays.asList(alphabet);
+          
+            for (int r = 0; r < arrays.size() - 1; r++) {
             getSort(arrays, chars);
         }
     }
