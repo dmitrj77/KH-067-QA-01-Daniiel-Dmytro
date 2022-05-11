@@ -40,11 +40,11 @@ public class Main {
         List<String> stringList = new ArrayList<>();
 
         stringList.add("afc");
-        stringList.add("avc");
+        stringList.add("Avc");
         stringList.add("dcaa");
         stringList.add("acd");
         stringList.add("abc");
-        stringList.add("zkc");
+        stringList.add("zKc");
         stringList.add("mnc");
         stringList.add("jlc");
         stringList.add("xcaa");
