@@ -67,23 +67,41 @@ public abstract class Car {
     }
 
 
-    public void setCars(String[] cars) {
-        if (this.cars.length == 0) {
-            this.cars = cars;
+    public void setCars(String[] car) {
+        if (cars.length == 0) {
+            cars = car;
         } else {
             System.out.printf("Array not empty");
         }
     }
 
-    public void getCar() {
-        for (int i = 0; i < cars.length; i++) {
-            System.out.printf("\nCar: " + cars[i]);
-        }
+    public Car(String color, String model, String number, int purchaseData, String[] cars) {
+        setColor(color);
+        setModel(model);
+        setNumber(number);
+        setPurchaseData(purchaseData);
+        setCars(cars);
+    }
+    public Car(String color, String model, String number, int purchaseData,float body) {
+        setColor(color);
+        setModel(model);
+        setNumber(number);
+        setPurchaseData(purchaseData);
+        setBody(body);
+    }
+    public Car(String color, String model, String number, int purchaseData,int seat) {
+        setColor(color);
+        setModel(model);
+        setNumber(number);
+        setPurchaseData(purchaseData);
+        setSeat(seat);
     }
 
     public void getModelDescription() {
-        System.out.printf("\nModel:" + getModel() + " Color:" + getColor() + " Number:" + getNumber() + " PurchaseData:"
-                +getPurchaseData());
+        for(int i=0;i< cars.length;i++){
+            System.out.printf("\nModel:"+getModel()+"\ncolor:"+ getColor()+
+                    "\nnumber "+ getNumber()+ "\nPurchase:" +getPurchaseData());
+        }
     }
 }
 

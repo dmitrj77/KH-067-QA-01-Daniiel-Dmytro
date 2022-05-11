@@ -10,7 +10,7 @@ public class Man extends Truck {
     @Override
     public void getModelDescription() {
         System.out.printf("\n-----Man-----");
-       super.getModelDescription();
-        System.out.printf("\n Body : " + getBody() + " m3");
+        super.getModelDescription();
+        System.out.printf("\nBody : " + getBody() + " m3");
     }
 }

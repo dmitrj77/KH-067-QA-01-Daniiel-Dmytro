@@ -1,13 +1,12 @@
 public class Main {
     public static void main(String[] args) {
-        String[] cars = new String[]{"Scania", "BMW", "Man"};
-        Bus saab = new Bus("white", "Scania", "AX3456PI", 2019, cars);
-        saab.getCar();
-        saab.getModelDescription();
-        Bus saab1=new Bus("blue","");
-        Truck man = new Truck("red", "Man", "BI3456KM", 2010, 10.5F);
-        man.getModelDescription();
-        man.getCar();
+            String[] car = new String[]{"Scania", "Man"};
+            Saab saab1 = new Saab ("red","Ikarus","AX3456PC",2020, car);
+            saab1.getModelDescription();
+            Saab saab = new Saab("white", "Scania", "AX3456PI", 2019,45);
+            saab.getModelDescription();
+            Man man = new Man("red", "Man", "BI3456KM", 2010, 10.5F);
+            man.getModelDescription();
 
     }
 }
