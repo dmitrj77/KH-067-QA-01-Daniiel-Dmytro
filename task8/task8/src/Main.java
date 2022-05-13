@@ -10,32 +10,27 @@ public class Main {
         List<String> chars = Arrays.asList(alphabet);
           
             for (int r = 0; r < arrays.size() - 1; r++) {
-            getSort(arrays, chars);
+                for (int i = 0; i < arrays.size() - 1; i++) {
+                    String str = arrays.get(i);
+                    String str1 = arrays.get(i + 1);
+
+                    String[] c = str.toLowerCase().split("");
+                    String[] c1 = str1.toLowerCase().split("");
+
+                    for (int ind = 0; ind < c.length; ) {
+                        int a = chars.indexOf(c[ind]);
+                        int b = chars.indexOf(c1[ind]);
+                        if (a == b) {
+                            ind++;
+                        } else if (a > b) {
+                            arrays.add(i, arrays.get(i + 1));
+                            arrays.remove(i + 2);
+                            break;
+                        } else break;
+                    }
+                }
         }return arrays;
     }
-
-    private static List<String> getSort(List<String> arrays, List<String> chars) {
-        for (int i = 0; i < arrays.size() - 1; i++) {
-            String str = arrays.get(i);
-            String str1 = arrays.get(i + 1);
-
-            String[] c = str.toLowerCase().split("");
-            String[] c1 = str1.toLowerCase().split("");
-
-            for (int ind = 0; ind < c.length; ) {
-                int a = chars.indexOf(c[ind]);
-                int b = chars.indexOf(c1[ind]);
-                if (a == b) {
-                    ind++;
-                } else if (a > b) {
-                    arrays.add(i, arrays.get(i + 1));
-                    arrays.remove(i + 2);
-                    break;
-                } else break;
-            }
-        }return arrays;
-    }
-
     public static void main(String[] args) {
         List<String> stringList = new ArrayList<>();
 
