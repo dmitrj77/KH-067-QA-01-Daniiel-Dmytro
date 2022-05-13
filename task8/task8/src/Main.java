@@ -16,25 +16,40 @@ public class Main {
 
                     String[] c = str.toLowerCase().split("");
                     String[] c1 = str1.toLowerCase().split("");
-
-                    for (int ind = 0; ind < c.length; ) {
-                        int a = chars.indexOf(c[ind]);
-                        int b = chars.indexOf(c1[ind]);
-                        if (a == b) {
-                            ind++;
-                        } else if (a > b) {
-                            arrays.add(i, arrays.get(i + 1));
-                            arrays.remove(i + 2);
-                            break;
-                        } else break;
+                    if(c.length>=c1.length){
+                        for (int ind = 0; ind < c.length; ) {
+                            int a = chars.indexOf(c[ind]);
+                            int b = chars.indexOf(c1[ind]);
+                            if (a == b) {
+                                ind++;
+                            } else if (a > b) {
+                                arrays.add(i, arrays.get(i + 1));
+                                arrays.remove(i + 2);
+                                break;
+                            } else break;
+                        }
+                    }else {
+                        for (int ind = 0; ind < c1.length; ) {
+                            int a = chars.indexOf(c[ind]);
+                            int b = chars.indexOf(c1[ind]);
+                            if (a == b) {
+                                ind++;
+                            } else if (a > b) {
+                                arrays.add(i, arrays.get(i + 1));
+                                arrays.remove(i + 2);
+                                break;
+                            } else break;
+                        }
                     }
+
+
                 }
         }return arrays;
     }
     public static void main(String[] args) {
         List<String> stringList = new ArrayList<>();
 
-        stringList.add("afc");
+        stringList.add("af");
         stringList.add("Avc");
         stringList.add("dcaa");
         stringList.add("acd");
