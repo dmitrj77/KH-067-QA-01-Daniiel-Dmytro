@@ -41,8 +41,6 @@ public class Main {
                             } else break;
                         }
                     }
-
-
                 }
         }return arrays;
     }
