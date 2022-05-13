@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-    static void sortList(List<String> arrays) {
+    static List<String> sortList(List<String> arrays) {
 
         String[] alphabet = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
                 "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
@@ -11,10 +11,10 @@ public class Main {
           
             for (int r = 0; r < arrays.size() - 1; r++) {
             getSort(arrays, chars);
-        }
+        }return arrays;
     }
 
-    private static void getSort(List<String> arrays, List<String> chars) {
+    private static List<String> getSort(List<String> arrays, List<String> chars) {
         for (int i = 0; i < arrays.size() - 1; i++) {
             String str = arrays.get(i);
             String str1 = arrays.get(i + 1);
@@ -33,7 +33,7 @@ public class Main {
                     break;
                 } else break;
             }
-        }
+        }return arrays;
     }
 
     public static void main(String[] args) {
