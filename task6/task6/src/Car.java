@@ -1,8 +1,6 @@
-package task7.src.Garage;
-
 import java.time.LocalDate;
 
-public abstract class Car implements Voice,Move {
+public abstract class Car {
     private String color;
     private String model;
     private String number;
@@ -84,14 +82,16 @@ public abstract class Car implements Voice,Move {
         setPurchaseData(purchaseData);
         setCars(cars);
     }
-    public Car(String color, String model, String number, int purchaseData,float body) {
+
+    public Car(String color, String model, String number, int purchaseData, float body) {
         setColor(color);
         setModel(model);
         setNumber(number);
         setPurchaseData(purchaseData);
         setBody(body);
     }
-    public Car(String color, String model, String number, int purchaseData,int seat) {
+
+    public Car(String color, String model, String number, int purchaseData, int seat) {
         setColor(color);
         setModel(model);
         setNumber(number);
@@ -99,14 +99,11 @@ public abstract class Car implements Voice,Move {
         setSeat(seat);
     }
 
-   public void getModelDescription() {
-       System.out.printf("\nModel:"+getModel()+"\ncolor:"+ getColor()+
-               "\nnumber "+ getNumber()+ "\nPurchase:" +getPurchaseData());
+    public void getModelDescription() {
+        System.out.printf("\nModel:" + getModel() + "\ncolor:" + getColor() +
+                "\nnumber " + getNumber() + "\nPurchase:" + getPurchaseData());
     }
-    public abstract void getVoice();
-    public abstract void getMove();
-
-   public abstract void getBrake();
-
 }
+
+
 
