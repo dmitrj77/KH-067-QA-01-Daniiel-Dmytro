@@ -17,7 +17,7 @@ public class Main {
                     String[] c = str.toLowerCase().split("");
                     String[] c1 = str1.toLowerCase().split("");
                     if(c.length>=c1.length){
-                        for (int ind = 0; ind < c.length; ) {
+                        for (int ind = 0; ind < c1.length; ) {
                             int a = chars.indexOf(c[ind]);
                             int b = chars.indexOf(c1[ind]);
                             if (a == b) {
@@ -29,7 +29,7 @@ public class Main {
                             } else break;
                         }
                     }else {
-                        for (int ind = 0; ind < c1.length; ) {
+                        for (int ind = 0; ind < c.length; ) {
                             int a = chars.indexOf(c[ind]);
                             int b = chars.indexOf(c1[ind]);
                             if (a == b) {
@@ -48,10 +48,10 @@ public class Main {
         List<String> stringList = new ArrayList<>();
 
         stringList.add("af");
+        stringList.add("afa");
+        stringList.add("dbaa");
         stringList.add("Avc");
         stringList.add("dcaa");
-        stringList.add("acd");
-        stringList.add("abc");
         stringList.add("zKc");
         stringList.add("mnc");
         stringList.add("jlc");
