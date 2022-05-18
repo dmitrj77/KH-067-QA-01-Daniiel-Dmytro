@@ -1,4 +1,3 @@
-
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -10,8 +9,7 @@ public class Main {
         String comm = "exit";
         String command = "";
         while (!command.equals(comm)) {
-
-            String operator;
+            String operator = "";
             double result;
             System.out.println("-----Calculator----");
             double first = setDoubleNumber();
@@ -22,8 +20,14 @@ public class Main {
             System.out.println("For division:     /");
             System.out.println("For multiply:     *");
             System.out.println("For remainder:    %");
-            operator = getOperator();
-
+            boolean validation = false;
+            try {
+                operator = sc.next();
+                if (validation == getOperator(operator)) throw new NotSupportedOperationException();
+            } catch (NotSupportedOperationException e) {
+                System.out.println("Exception:" + e);
+                operator = sc.next();
+            }
             switch (operator) {
                 case "+": {
                     double second = setDoubleNumber();
@@ -62,7 +66,6 @@ public class Main {
                 }
             }
             System.out.println("Enter " + " exit:" + " to close!");
-            // sc.nextLine();
             command = sc.nextLine();
             command = command.toLowerCase();
         }
@@ -82,36 +85,27 @@ public class Main {
                 System.out.println(e);
                 sc.nextLine();
             }
-        }
-        while (!validation);
+        } while (!validation);
         return number;
     }
 
-    public static String getOperator() {
+    public static boolean getOperator(String operator) {
         Scanner sc = new Scanner(System.in);
-        String operator = sc.next();
+        //operator = sc.next();
         List<String> chars = Arrays.asList("+", "-", "*", "/", "%");
         boolean validation = false;
 
-        while (!validation) {
-            validation=sc.toString().isEmpty();
-           if(validation) {
-               operator = sc.next();
-           }else{
-               validation = chars.contains(operator);
-               try {
-                   if (!validation)
-                       throw new OperationException();
-               } catch (OperationException e) {
-                   System.out.println("Exception:" + e);
-                   operator = sc.next();
-               }
-           }
-        }
-        return operator;
+        do {
+            if (validation = chars.contains(operator)) {
+                operator = operator;
+            } else {
+                break;
+            }
+        } while (!validation);
+        return validation;
     }
 
-    static class OperationException extends Exception {
+    static class NotSupportedOperationException extends Exception {
 
         public String toString() {
             return "NotSupportedOperationException";
