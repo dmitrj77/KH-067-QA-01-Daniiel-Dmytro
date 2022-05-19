@@ -22,8 +22,7 @@ public class Main {
             System.out.println("For remainder:    %");
             boolean validation = false;
             try {
-                operator = sc.next();
-                if (validation == getOperator(operator)) throw new NotSupportedOperationException();
+                operator = getOperator();
             } catch (NotSupportedOperationException e) {
                 System.out.println("Exception:" + e);
                 operator = sc.next();
@@ -88,9 +87,9 @@ public class Main {
         return number;
     }
 
-    public static boolean getOperator(String operator) {
+    public static String getOperator() throws NotSupportedOperationException {
         Scanner sc = new Scanner(System.in);
-        //operator = sc.next();
+        String operator = sc.next();
         List<String> chars = Arrays.asList("+", "-", "*", "/", "%");
         boolean validation = false;
 
@@ -98,15 +97,16 @@ public class Main {
             if (validation = chars.contains(operator)) {
                 operator = operator;
             } else {
-                break;
+                throw new NotSupportedOperationException();
             }
         } while (!validation);
-        return validation;
+        return operator;
     }
 
     static class NotSupportedOperationException extends Exception {
 
         public String toString() {
+
             return "NotSupportedOperationException";
         }
     }
