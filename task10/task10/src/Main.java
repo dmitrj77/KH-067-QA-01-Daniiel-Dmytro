@@ -9,7 +9,7 @@ public class Main {
         String comm = "0";
         String command = "";
         while (!command.equals(comm)) {
-            String operator = "";
+            String operator;
             double result;
             System.out.println("-----Calculator----");
             double first = setDoubleNumber();
@@ -20,7 +20,6 @@ public class Main {
             System.out.println("For division:     /");
             System.out.println("For multiply:     *");
             System.out.println("For remainder:    %");
-            boolean validation = false;
             try {
                 operator = getOperator();
             } catch (NotSupportedOperationException e) {
@@ -91,11 +90,11 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String operator = sc.next();
         List<String> chars = Arrays.asList("+", "-", "*", "/", "%");
-        boolean validation = false;
+        boolean validation;
 
         do {
             if (validation = chars.contains(operator)) {
-                operator = operator;
+                break;
             } else {
                 throw new NotSupportedOperationException();
             }
